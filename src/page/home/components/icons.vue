@@ -16,53 +16,9 @@
 <script>
     export default {
         name:"homeIcons",
+        props:['iconList'],
         data(){
             return{
-                iconList:[{
-                    id:"1",
-                    imgUrl:"https://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    desc:"酒店"
-                },
-                {
-                    id:"2",
-                    imgUrl:"https://s.qunarzz.com/homenode/images/touchheader/flight.png",
-                    desc:"飞机"
-                },
-                {
-                    id:"3",
-                    imgUrl:"https://s.qunarzz.com/homenode/images/touchheader/train.png",
-                    desc:"火车票"
-                },
-                {
-                    id:"4",
-                    imgUrl:"https://s.qunarzz.com/homenode/images/touchheader/package.png",
-                    desc:"度假"
-                },
-                {
-                    id:"5",
-                    imgUrl:"https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png",
-                    desc:"汽车票船票"
-                },
-                {
-                    id:"6",
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:"海外酒店"
-                },
-                {
-                    id:"7",
-                    imgUrl:"https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png",
-                    desc:"低价机票"
-                },
-                {
-                    id:"8",
-                    imgUrl:"https://picbed.qunarzz.com/ae617a31e0bd5803d76918b817f6d942.png",
-                    desc:"自由行"
-                },
-                {
-                    id:"9",
-                    imgUrl:"https://picbed.qunarzz.com/ae617a31e0bd5803d76918b817f6d942.png",
-                    desc:"自由行adsdasdadadasdasdadadadasdasdas"
-                }],
                 swiperOptions:{
                     loop:false
                 }

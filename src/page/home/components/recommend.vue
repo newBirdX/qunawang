@@ -17,30 +17,9 @@
 <script>
     export default {
         name:"homeRecommend",
+        props:['recommendList'],
         data(){
             return {
-                recommendList:[{
-                    id:1,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },
-                {
-                    id:2,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },{
-                    id:3,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },{
-                    id:4,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                }]
             }
         }
     }

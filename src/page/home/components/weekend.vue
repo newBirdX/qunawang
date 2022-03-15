@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">周末游</div>
         <ul>
-            <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
                 <div class="item-img-wrapper">
                     <img :src="item.imgUrl" alt="" class="item-img">
                 </div>
@@ -18,30 +18,9 @@
 <script>
     export default {
         name:"weekend",
+        props:['weekendList'],
         data(){
             return {
-                recommendList:[{
-                    id:1,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },
-                {
-                    id:2,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },{
-                    id:3,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                },{
-                    id:4,
-                    imgUrl:"https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg",
-                    title:"丽江古城",
-                    desc:"丽江七天游,开心七天乐"
-                }]
             }
         }
     }
@@ -57,7 +36,7 @@
     .item-img-wrapper{
         overflow: hidden;
         height: 0;
-        padding-bottom: 33.9%;
+        padding-bottom: 37.09%;
     }
     .item-img{
         width: 100%;

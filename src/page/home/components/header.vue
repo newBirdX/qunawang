@@ -5,7 +5,7 @@
         </div>
         <div class="header-input"><span class="iconfont">&#xe651;</span>输入/景点/游玩</div>
         <div class="header-right">
-            城市
+            {{city}}
              <span class="iconfont arrow_icon">&#xeb6d;</span>
         </div>
     </div>
@@ -14,6 +14,7 @@
 <script>
     export default {
         name:"headerComponent",
+        props:['city']
     }
 </script>
 
