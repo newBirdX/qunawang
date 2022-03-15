@@ -4,10 +4,12 @@
             <div class="iconfont back_icon">&#xe8b5;</div>
         </div>
         <div class="header-input"><span class="iconfont">&#xe651;</span>输入/景点/游玩</div>
+        <router-link to="/city">
         <div class="header-right">
             {{city}}
              <span class="iconfont arrow_icon">&#xeb6d;</span>
         </div>
+        </router-link>
     </div>
 </template>
 
@@ -48,6 +50,7 @@
     .header-right{
         width: 1.24rem;
         float: right;
+        color: #fff;
         padding-left:.1rem;
         .arrow_icon{
             font-size: .24rem;
