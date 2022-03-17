@@ -6,26 +6,29 @@
         <div class="header-input"><span class="iconfont">&#xe651;</span>输入/景点/游玩</div>
         <router-link to="/city">
         <div class="header-right">
-            {{city}}
              <span class="iconfont arrow_icon">&#xeb6d;</span>
+              {{this.city}}
         </div>
         </router-link>
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
     export default {
         name:"headerComponent",
-        props:['city']
+        computed:{
+            ...mapState(['city'])
+        }
     }
 </script>
 
-<style lang="stylus" scoped>
-@import "~@/assets/style/variable.styl"
+<style lang="less" scoped>
+@import "~@/assets/style/variable.less";
 .header{
   display: flex;
   line-height:.86rem;
-  background: $bgColor;
+  background: @bgColor;
   color: #fff;
     .header-left{
         width: .64rem;
@@ -48,7 +51,8 @@
         padding-left:.1rem;
     }
     .header-right{
-        width: 1.24rem;
+        min-width: 1.04rem;
+        padding: 0 .1rem;
         float: right;
         color: #fff;
         padding-left:.1rem;

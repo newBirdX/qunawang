@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :city="city"/>
+        <Header/>
         <HeaderSwiper :swiperList="swiperList" v-if="isShow"/>
         <HomeIcons :iconList="iconList"/>
         <HomeRecommend :recommendList="recommendList"/>
@@ -20,9 +20,7 @@ import HomeWeekend from './components/weekend.vue'
         components:{Header,HeaderSwiper,HomeIcons,HomeRecommend,HomeWeekend},
         data(){
             return {
-                city:"",
-                swiperList:[],
-                city:[],
+                swiperList:[],    
                 iconList:[],
                 recommendList:[],
                 weekendList:[]
@@ -33,7 +31,6 @@ import HomeWeekend from './components/weekend.vue'
                 axios.get("/mock/index.json").then(response=>{
                         let res=response.data.data;
                         console.log(response.data.data);
-                    this.city=res.city;
                     this.swiperList=res.swiperList;
                     this.iconList=res.iconList;
                     this.recommendList=res.recommendList;
