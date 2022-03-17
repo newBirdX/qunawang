@@ -1,7 +1,7 @@
 <template>
     <div>
         <CityHeader/>
-        <CitySearch/>
+        <CitySearch :cities="cities"/>
         <CityList :hotCities="hotCities" :cities="cities" :letter="letter"/>
         <CityAlpha :cities="cities" @change="handleLetterChange"/>
     </div>
