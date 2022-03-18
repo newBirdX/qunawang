@@ -33,7 +33,7 @@ import BScroll from 'better-scroll'
         computed:{
             hasNoData(){
                 return !this.list.length;
-            }
+            },
         },
         watch:{
             keyWord(){

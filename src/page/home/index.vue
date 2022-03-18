@@ -10,6 +10,7 @@
 
 <script>
 import axios from 'axios'
+import {mapState } from 'vuex'
 import Header from './components/header.vue'
 import HeaderSwiper from './components/swiper.vue'
 import HomeIcons from './components/icons.vue'
@@ -23,12 +24,13 @@ import HomeWeekend from './components/weekend.vue'
                 swiperList:[],    
                 iconList:[],
                 recommendList:[],
-                weekendList:[]
+                weekendList:[],
+                lastCity:""
             }
         },
         methods:{
             getHomeInfo(){
-                axios.get("/mock/index.json").then(response=>{
+                axios.get("/mock/index.json?city="+this.city).then(response=>{
                         let res=response.data.data;
                         console.log(response.data.data);
                     this.swiperList=res.swiperList;
@@ -44,10 +46,18 @@ import HomeWeekend from './components/weekend.vue'
                 if(this.swiperList.length){
                     return true
                 }
-            }
+            },
+            ...mapState(['city'])
         },
         mounted(){
-            this.getHomeInfo()
+            this.getHomeInfo();
+            this.lastCity=this.city
+        },
+        activated(){
+            if(this.lastCity!==this.city){
+                this.getHomeInfo();
+                this.lastCity=this.city
+            }
         }
     }
 </script>
