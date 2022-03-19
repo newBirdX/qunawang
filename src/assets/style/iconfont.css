@@ -13,6 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-tupian:before {
+  content: "\e8ba";
+}
+
+.icon-sousuo:before {
+  content: "\e651";
+}
+
 .icon-fanhuijiantou:before {
   content: "\e8b5";
 }
