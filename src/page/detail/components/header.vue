@@ -47,18 +47,21 @@ export default {
   },
   activated(){
       window.addEventListener('scroll',this.handleScroll)
-  }
+  },
+  deactivated(){
+      window.removeEventListener('scroll',this.handleScroll)
+  },
 };
 </script>
 
 <style lang="less" scoped>
 @import '~@/assets/style/variable.less';
 .container{
-height: 50rem;
 .abs {
   position: absolute;
   top: 0.2rem;
   left: 0.2rem;
+  z-index: 100;
   width: 0.8rem;
   height: 0.8rem;
   padding-left: 0.1rem;
