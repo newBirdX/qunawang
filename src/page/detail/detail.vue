@@ -1,12 +1,13 @@
 <template>
     <div class="container">
-        <Banner/>
+        <Banner :imgs="imgs" :sightName="sightName" :bannerImg="bannerImg"/>
         <Header/>
         <List :list="list"/>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
 import Banner from './components/banner.vue'
 import Header from './components/header.vue'
 import List from './components/list.vue'
@@ -15,24 +16,32 @@ import List from './components/list.vue'
         components:{Banner,Header,List},
         data(){
             return {
-                list:[{
-                    title:"成人票",
-                    children:[{
-                        title:"成人三馆联票",
-                        children:[{
-                        title:"成人三馆联票--东方店"
-                    }]
-                    },{
-                        title:"成人五馆联票"
-                    }]
-                },{
-                    title:"学生票"
-                },{
-                    title:"儿童票"
-                },{
-                    title:"老年票"
-                }]
+                list:[],
+                imgs:[],
+                sightName:"",
+                bannerImg:""
             }
+        },
+        methods:{
+            getDetailInfo(){
+                // console.log(this.$route)
+                // console.log(this.$router)
+                axios.get('/mock/detail.json',{
+                    params:{
+                        id:this.$route.params.id
+                    }
+                }).then(res=>{
+                    let data=res.data.data;
+                    console.log(data)
+                    this.list=data.categoryList;
+                    this.imgs=data.gallaryImgs;
+                    this.sightName=data.sightName;
+                    this.bannerImg=data.bannerImg
+                })
+            }
+        },
+        mounted(){
+            this.getDetailInfo();
         }
     }
 </script>

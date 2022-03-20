@@ -1,12 +1,12 @@
 <template>
   <div class="banner" @click="showImg">
     <img
-      src="https://imgs.qunarzz.com/sight/p0/1905/5d/5dc13c7e0e84e887a3.img.jpg_710x360_7b857853.jpg"
+      :src="bannerImg"
       alt=""
       class="banner-img"
     />
     <div class="banner-info">
-      <div class="banner-title">承德避暑山庄</div>
+      <div class="banner-title">{{sightName}}</div>
       <div class="banner-number">
         <span class="iconfont banner-icon">&#xe8ba;</span>30
       </div>
@@ -21,12 +21,9 @@ import CommonGailary from "@/common/gailary/gailary.vue";
 export default {
   name: "detail-banner",
   components: { CommonGailary },
+  props:['imgs','sightName','bannerImg'],
   data() {
     return {
-      imgs: [
-        "https://imgs.qunarzz.com/sight/p0/1605/99/994a4f48dd1ee9fa90.water.jpg_710x360_a99e8815.jpg",
-        "https://imgs.qunarzz.com/sight/p0/1605/99/994a4f48dd1ee9fa90.water.jpg_710x360_a99e8815.jpg",
-      ],
       isShow:false
     };
   },
