@@ -23,6 +23,7 @@ export default {
   methods:{
     handleGailaryClick(){
       this.$emit('close')
+      // console.log(this.$parent.isShow)
     }
   },
   data(){

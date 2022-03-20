@@ -11,16 +11,19 @@
         <span class="iconfont banner-icon">&#xe8ba;</span>30
       </div>
     </div>
+    <FadeAnimation>
     <CommonGailary :imgs="imgs" v-show="isShow" @close="handleClose"/>
+    </FadeAnimation>
   </div>
 </template>
 
 <script>
 //gailary组件是图片画廊组件
 import CommonGailary from "@/common/gailary/gailary.vue";
+import FadeAnimation from '@/common/fade/fade.vue'
 export default {
   name: "detail-banner",
-  components: { CommonGailary },
+  components: { CommonGailary ,FadeAnimation},
   props:['imgs','sightName','bannerImg'],
   data() {
     return {
@@ -33,6 +36,7 @@ export default {
     },
     handleClose(){
       this.isShow=false;
+      console.log("isshow",this.isShow)
     }
   }
 };
